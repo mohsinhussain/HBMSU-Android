@@ -24,8 +24,7 @@ open class WeatherRepository @Inject constructor(val webService: WebService, val
                 Log.d(TAG, "saveNetworkCallResult")
                 val forecast: List<Forecast> = data!!.list
                 forecast?.filterNot {
-                    (it.dt !in listOf(1, 2, 3)) or
-                            it.dt_txt.isNullOrBlank() or
+                    it.dt_txt.isNullOrBlank() or
                             (it.main == null) or
                             (it.weather == null)
                 }?.forEach { weatherDao.insertForecast(it) }

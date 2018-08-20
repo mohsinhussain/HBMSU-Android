@@ -2,7 +2,7 @@ package com.tatweer.mhussain.hbmsu_android.models
 
 import android.arch.persistence.room.Entity
 
-@Entity
-class Main (val temp: Int, val temp_min: Int, val temp_max: Int, val pressure: Int, val sea_level: Int, val grnd_level: Int, val humidity: Int, val temp_kf: Int) {
+
+class Main (val temp: Double, val temp_min: Double, val temp_max: Double, val pressure: Double, val sea_level: Double, val grnd_level: Double, val humidity: Int, val temp_kf: Double) {
 }
 
