@@ -10,6 +10,7 @@ import com.tatweer.mhussain.hbmsu_android.utils.AppExecutors
 import com.tatweer.mhussain.hbmsu_android.datasources.webservice.Error
 import com.tatweer.mhussain.hbmsu_android.models.WeatherResponse
 import retrofit2.Call
+import retrofit2.Response
 import java.io.IOException
 
 /**
@@ -38,6 +39,7 @@ abstract class NetworkBoundResource<T>(private val appExecutors: AppExecutors) {
 
             try {
                 val response = createNetworkCall().execute()
+
 
                 println("response is: $response")
 

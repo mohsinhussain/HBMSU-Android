@@ -22,7 +22,16 @@ open class WeatherRepository @Inject constructor(val webService: WebService, val
 
             override fun saveNetworkCallResult(data: WeatherResponse?) {
                 Log.d(TAG, "saveNetworkCallResult")
+
                 val forecast: List<Forecast> = data!!.list
+                //TODO: UnComment the following six lines to view daily data and use refined forecast below
+//                var refinedForecast: ArrayList<Forecast> = ArrayList()
+//                var count = 4
+//                while (count<40){
+//                    refinedForecast.add(forecast.get(count))
+//                    count = count+8
+//                }
+
                 forecast?.filterNot {
                     it.dt_txt.isNullOrBlank() or
                             (it.main == null) or
@@ -38,10 +47,6 @@ open class WeatherRepository @Inject constructor(val webService: WebService, val
 
             override fun loadFromDatabase(): LiveData<List<Forecast>> {
                 Log.d(TAG, "loadFromDatabase")
-//                return when (cuisine == 0) {
-//                    true -> weatherDao.queryForecasts()
-//                    else -> weatherDao.queryRestaurantsByCuisine(cuisine)
-//                }
                 return weatherDao.queryForecasts()
             }
 

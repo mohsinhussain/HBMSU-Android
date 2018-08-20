@@ -1,6 +1,6 @@
 package com.tatweer.mhussain.hbmsu_android.dagger.modules
 
-import com.tatweer.mhussain.hbmsu_android.views.WeatherListingActivity
+import com.tatweer.mhussain.hbmsu_android.views.activities.WeatherListingActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

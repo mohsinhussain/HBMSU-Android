@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/iconImageView"
+        android:layout_centerVertical="true"
+        android:scaleType="fitCenter"
+        android:layout_height="60dp"
+        android:layout_width="60dp"
+        android:layout_marginLeft="16dp" />
+
+
+    <LinearLayout
+        android:id="@+id/mainContent"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/iconImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:text="Clear Sky"
+        android:textSize="24sp"
+        android:textColor="@color/primaryTextColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/dayTextView"
+        android:text="date"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/secondaryTextColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tempTextView"
+        android:text="33 C"
+        android:layout_marginRight="16dp"
+        android:layout_toLeftOf="@+id/arrow"
+        android:layout_centerVertical="true"
+        android:textSize="24sp"
+        android:textColor="@color/secondaryTextColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/right_arrow"
+        android:layout_width="15dp"
+        android:layout_marginRight="16dp"
+        android:layout_height="15dp" />
+
+
+    <View
+
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/mainContent"
+        android:background="@color/secondaryTextColor"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="90dp"
+        android:layout_height="1dp"/>
+
+
+</RelativeLayout>

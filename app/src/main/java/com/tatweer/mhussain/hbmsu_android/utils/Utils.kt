@@ -11,6 +11,10 @@ import android.graphics.drawable.VectorDrawable
 import android.net.ConnectivityManager
 import android.os.Build
 import android.support.v4.content.ContextCompat
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.util.*
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -34,6 +38,8 @@ class Utils @Inject constructor(private val context: Context) {
             else -> throw IllegalArgumentException("unsupported drawable type")
         }
     }
+
+
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private fun getBitmap(vectorDrawable: VectorDrawable): Bitmap {

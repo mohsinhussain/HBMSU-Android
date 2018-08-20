@@ -18,10 +18,12 @@ android {
 //            buildConfigField 'String', 'URL', '"http://192.168.1.195:8080/"'
             buildConfigField 'String', 'URL', '"https://api.openweathermap.org/"'
             buildConfigField 'String', 'APIKEY', '"1259c7528433a9050b7ec2b634430a2f"'
+            buildConfigField 'String', 'iconURL', '"http://openweathermap.org/img/w/"'
         }
         release {
             buildConfigField 'String', 'URL', '"https://api.openweathermap.org/"'
             buildConfigField 'String', 'APIKEY', '"1259c7528433a9050b7ec2b634430a2f"'
+            buildConfigField 'String', 'iconURL', '"http://openweathermap.org/img/w/"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -88,6 +90,10 @@ dependencies {
     //Leak Canary
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakcanary_version"
     releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leakcanary_version"
+
+    //Image
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
 
     //tests
     testImplementation "junit:junit:$junit_version"
