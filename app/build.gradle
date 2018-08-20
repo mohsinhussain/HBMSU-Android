@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 27
@@ -15,7 +14,14 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+//            buildConfigField 'String', 'URL', '"http://192.168.1.195:8080/"'
+            buildConfigField 'String', 'URL', '"https://api.openweathermap.org/"'
+            buildConfigField 'String', 'APIKEY', '"1259c7528433a9050b7ec2b634430a2f"'
+        }
         release {
+            buildConfigField 'String', 'URL', '"https://api.openweathermap.org/"'
+            buildConfigField 'String', 'APIKEY', '"1259c7528433a9050b7ec2b634430a2f"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
