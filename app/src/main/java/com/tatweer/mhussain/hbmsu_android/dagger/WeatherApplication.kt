@@ -13,6 +13,8 @@ import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import javax.inject.Inject
+import com.evernote.android.job.JobManager
+import com.tatweer.mhussain.hbmsu_android.services.NoteJobCreater
 
 
 class WeatherApplication : Application(), HasActivityInjector {
@@ -43,6 +45,9 @@ class WeatherApplication : Application(), HasActivityInjector {
                  .netModule(NetModule(BuildConfig.URL))
                  .build()
                  .inject(this)
+
+
+         JobManager.create(this).addJobCreator(NoteJobCreater())
 
     }
 

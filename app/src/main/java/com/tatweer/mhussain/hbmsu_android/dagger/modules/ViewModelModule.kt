@@ -10,16 +10,14 @@ import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 
-/**
- * Created by romantolmachev on 23/11/2017.
- */
+
 @Module
 abstract class ViewModelModule {
 
     @Binds
     @IntoMap
     @ViewModelKey(ForecastsViewModel::class)
-    internal abstract fun bindRestaurantsViewModel(forecastsViewModel: ForecastsViewModel): ViewModel
+    internal abstract fun bindWeatherViewModel(forecastsViewModel: ForecastsViewModel): ViewModel
 
     @Binds
     internal abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

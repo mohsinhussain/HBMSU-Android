@@ -12,6 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
+        <receiver
+            android:name=".broadcastreceiver.AlertReceiver"
+            android:enabled="true" />
+
+        <service
+            android:name=".services.NotificationService"
+            android:enabled="true" />
+
+
         <activity
             android:name=".views.activities.WeatherListingActivity"
             android:label="@string/weather_forecast">

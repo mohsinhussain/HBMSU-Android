@@ -20,9 +20,7 @@ import java.util.*
 import javax.inject.Inject
 
 
-/**
- * Created by Mohsin on 3/20/2016.
- */
+
 class ForecastsViewAdapter(private val context: Context, private val itemList: List<Forecast>, val preferences: SharedPreferences) : RecyclerView.Adapter<ForecastsViewHolders>() {
 
 

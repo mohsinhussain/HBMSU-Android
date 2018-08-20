@@ -13,9 +13,7 @@ import retrofit2.Call
 import retrofit2.Response
 import java.io.IOException
 
-/**
- * Created by romantolmachev on 22/11/2017.
- */
+
 abstract class NetworkBoundResource<T>(private val appExecutors: AppExecutors) {
 
     private val result = MediatorLiveData<Resource<T>>()

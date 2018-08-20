@@ -17,7 +17,7 @@ open class WeatherRepository @Inject constructor(val webService: WebService, val
     val TAG: String = "WeatherRepository"
 
 
-    open fun getForecasts(cuisine: Int = 0): LiveData<Resource<List<Forecast>>> {
+    open fun getForecasts(): LiveData<Resource<List<Forecast>>> {
         return object : NetworkBoundResource<List<Forecast>>(appExecutors) {
 
             override fun saveNetworkCallResult(data: WeatherResponse?) {

@@ -16,9 +16,7 @@ import android.graphics.drawable.Drawable
 
 
 
-/**
- * Created by Mohsin on 3/20/2016.
- */
+
 class ForecastsViewHolders(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     var titleTextView: TextView

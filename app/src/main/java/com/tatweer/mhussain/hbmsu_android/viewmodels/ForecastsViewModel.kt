@@ -9,17 +9,15 @@ import com.tatweer.mhussain.hbmsu_android.models.Forecast
 import com.tatweer.mhussain.hbmsu_android.models.WeatherRepository
 import javax.inject.Inject
 
-/**
- * Created by romantolmachev on 23/11/2017.
- */
+
 class ForecastsViewModel @Inject constructor(private val repository: WeatherRepository) : ViewModel() {
 
     var initialized = false
 
     var cuisineInput: MutableLiveData<Int> = MutableLiveData()
 
-    val forecastList: LiveData<Resource<List<Forecast>>> = Transformations.switchMap(cuisineInput) { cuisine ->
-        initialized = true; repository.getForecasts(cuisine)
+    val forecastList: LiveData<Resource<List<Forecast>>> = Transformations.switchMap(cuisineInput) { it ->
+        initialized = true; repository.getForecasts()
     }
 
 }
