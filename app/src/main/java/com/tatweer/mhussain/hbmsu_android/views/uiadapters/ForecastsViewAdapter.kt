@@ -2,6 +2,7 @@ package com.tatweer.mhussain.hbmsu_android.views.uiadapters
 
 import android.annotation.TargetApi
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Build
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -22,7 +23,7 @@ import javax.inject.Inject
 /**
  * Created by Mohsin on 3/20/2016.
  */
-class ForecastsViewAdapter(private val context: Context, private val itemList: List<Forecast>) : RecyclerView.Adapter<ForecastsViewHolders>() {
+class ForecastsViewAdapter(private val context: Context, private val itemList: List<Forecast>, val preferences: SharedPreferences) : RecyclerView.Adapter<ForecastsViewHolders>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ForecastsViewHolders {
@@ -36,7 +37,7 @@ class ForecastsViewAdapter(private val context: Context, private val itemList: L
         val item = itemList[position]
 
         holder.titleTextView.setText(item.weather.get(0).main)
-        holder.tempTextView.setText(item.main.temp.toString()+" C")
+        holder.tempTextView.setText(showTemp(item.main.temp))
         holder.dayTextView.setText(item.dt_txt)
 
 
@@ -45,10 +46,18 @@ class ForecastsViewAdapter(private val context: Context, private val itemList: L
                 .into(holder.iconImageView)
 
 
-
     }
 
 
+    fun showTemp(temp: Double): String{
+        val fahrenheitTemperature = temp * 9 / 5 + 32
+        if(preferences.getBoolean("isImperial", false)){
+            return fahrenheitTemperature.toString()+" F"
+        }
+        else{
+            return temp.toString()+" C"
+        }
+    }
 
     override fun getItemCount(): Int {
         return this.itemList.size
